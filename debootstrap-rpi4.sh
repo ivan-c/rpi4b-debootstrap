@@ -56,3 +56,5 @@ mount -o bind /dev /mnt/sd/dev/
 
 mkdir -p /mnt/sd/tmp/
 cp provision.sh /mnt/sd/tmp/
+
+# chroot /mnt/sd /tmp/provision.sh
