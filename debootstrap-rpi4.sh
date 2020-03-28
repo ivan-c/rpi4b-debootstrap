@@ -18,7 +18,11 @@ parted -s --align optimal "$loopback_device" -- \
 
 #losetup -d /dev/loop0
 #rm rpi4.img
-debootstrap --arch arm64 buster /mnt/sd
+
+# debootstrap --arch arm64 buster /mnt/sd
+qemu-debootstrap --arch=arm64 --keyring /usr/share/keyrings/debian-archive-keyring.gpg --variant=buildd --exclude=debfoster buster /mnt/sd http://ftp.debian.org/debian
+
+
 
 echo done running debootstrap
 
