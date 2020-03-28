@@ -1,11 +1,16 @@
 #! /bin/sh -e
 
-apt update
-apt upgrade
+set -x
+
+DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get upgrade -y
+
+apt-get install -y tzdata
 
 dpkg-reconfigure tzdata
 
-apt install locales
+apt-get install locales
 dpkg-reconfigure locales
 
 echo \
