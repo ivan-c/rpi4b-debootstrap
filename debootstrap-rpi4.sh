@@ -40,7 +40,9 @@ EOF
 echo "Mounting /dev/ and /dev/pts in chroot... "
 mkdir -p -m 755 /mnt/sd/dev/pts
 mount -t devtmpfs -o mode=0755,nosuid devtmpfs /mnt/sd/dev
-mount -t devpts -o gid=5,mode=620 devpts /mnt/sd/dev/pts
+
+mount --bind /dev/pts /mnt/sd/dev/pts
+# mount -t devpts -o gid=5,mode=620 devpts /mnt/sd/dev/pts
 echo "OK"
 
 cp /usr/bin/qemu-aarch64-static /mnt/sd/usr/bin
