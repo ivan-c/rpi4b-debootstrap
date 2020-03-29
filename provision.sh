@@ -51,6 +51,9 @@ proc              /proc           proc    defaults          0       0
 /dev/mmcblk0p2    /               ext4    defaults,noatime  0       1
 EOF
 
+apt install software-properties-common
+apt-add-repository non-free
+apt-get update
 apt install \
     ca-certificates \
     crda \
