@@ -16,6 +16,14 @@ parted -s --align optimal "$loopback_device" -- \
     mkpart primary fat32 1 128MiB \
     mkpart primary ext4 128MiB 100% set 1 boot
 
+mkfs.vfat -F 32 /dev/loop0p1
+mkfs.ext4 /dev/loop0p2
+
+mount /dev/loop0p2 /mnt/sd
+mkdir /mnt/sd/boot
+mount /dev/loop0p1 /mnt/sd/boot
+
+
 #losetup -d /dev/loop0
 #rm rpi4.img
 
