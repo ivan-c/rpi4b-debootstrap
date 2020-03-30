@@ -49,18 +49,9 @@ deb-src http://http.us.debian.org/debian buster-updates main non-free
 EOF
 
 
-echo "Mounting /dev/ and /dev/pts in chroot... "
-mkdir -p -m 755 /mnt/sd/dev/pts
-mount -t devtmpfs -o mode=0755,nosuid devtmpfs /mnt/sd/dev
 
-mount --bind /dev/pts /mnt/sd/dev/pts
 # mount -t devpts -o gid=5,mode=620 devpts /mnt/sd/dev/pts
-echo "OK"
 
-cp /usr/bin/qemu-aarch64-static /mnt/sd/usr/bin
-mount -t proc /proc /mnt/sd/proc/
-mount -t sysfs /sys /mnt/sd/sys/
-mount -o bind /dev /mnt/sd/dev/
 
 mkdir -p /mnt/sd/tmp/
 cp provision.sh /mnt/sd/tmp/
