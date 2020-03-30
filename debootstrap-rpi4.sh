@@ -54,6 +54,7 @@ EOF
 
 
 mkdir -p /mnt/sd/tmp/
-cp provision.sh /mnt/sd/tmp/
+cp provision.sh /mnt/sd/usr/bin/
 
 # chroot /mnt/sd /tmp/provision.sh
+schroot -c  debootstrap-rpi4 -u root provision.sh
