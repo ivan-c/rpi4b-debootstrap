@@ -9,6 +9,7 @@ apt-get upgrade -y
 
 
 
+mkdir -p /etc/network
 
 echo \
 'auto lo
@@ -27,7 +28,7 @@ echo \
 nameserver 1.0.0.1' \
 > /etc/resolv.conf
 
-echo 'Pi-Example' > /etc/hostname
+echo 'pi4' > /etc/hostname
 
 echo \
 '127.0.0.1 localhost
