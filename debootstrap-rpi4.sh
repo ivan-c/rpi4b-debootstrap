@@ -56,5 +56,10 @@ EOF
 mkdir -p /mnt/sd/tmp/
 cp provision.sh /mnt/sd/usr/bin/
 
-# chroot /mnt/sd /tmp/provision.sh
-schroot -c  debootstrap-rpi4 -u root provision.sh
+# pass proxy to chroot
+if [ -n "$http_proxy" ]; then
+    proxy_vars="http_proxy=${http_proxy}"
+fi
+
+# reuse given http proxy
+schroot --chroot debootstrap-rpi4 -u root -- sh -c "${proxy_vars} provision.sh"
