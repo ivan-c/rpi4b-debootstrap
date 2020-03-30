@@ -6,12 +6,9 @@ DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get upgrade -y
 
-apt-get install -y tzdata
 
-dpkg-reconfigure tzdata
 
-apt-get install locales
-dpkg-reconfigure locales
+
 
 echo \
 'auto lo
