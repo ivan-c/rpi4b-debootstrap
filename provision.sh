@@ -51,10 +51,10 @@ proc              /proc           proc    defaults          0       0
 /dev/mmcblk0p2    /               ext4    defaults,noatime  0       1
 EOF
 
-apt install software-properties-common
+apt-get install -y software-properties-common
 apt-add-repository non-free
 apt-get update
-apt install \
+apt-get install -y -o Dpkg::Options::=--force-confnew \
     ca-certificates \
     crda \
     fake-hwclock \
@@ -75,12 +75,12 @@ wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac4345
 useradd -s /bin/bash -d /home/debian -G sudo debian
 
 cd /usr/local/bin
-wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update /usr/bin
+wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update
 chmod +x /usr/bin/rpi-update
 
-apt install curl binutils
+apt install -y curl binutils kmod
 
-WANT_PI4=1 rpi-update
+yes | WANT_PI4=1 rpi-update
 
 echo 'dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait net.ifnames=0' > /boot/cmdline.txt
 echo $'kernel=kernel8.img\ngpu_mem=16\narm_64bit=1\ndtoverlay=vc4-fkms-v3d' > /boot/config.txt
