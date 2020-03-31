@@ -19,9 +19,13 @@ parted --script --align optimal "$loopback_device" -- \
 mkfs.vfat -F 32 /dev/loop0p1
 mkfs.ext4 /dev/loop0p2
 
+test -d /mnt/sd || mkdir -pf /mnt/sd
 mount /dev/loop0p2 /mnt/sd
-mkdir /mnt/sd_boot
+test -d /mnt/sd/boot || mkdir /mnt/sd/boot
+
+test -d /mnt/sd_boot || mkdir -pf /mnt/sd_boot
 mount /dev/loop0p1 /mnt/sd_boot
+
 mount --bind /mnt/sd_boot /mnt/sd/boot
 
 
