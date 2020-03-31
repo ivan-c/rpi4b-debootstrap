@@ -4,9 +4,10 @@ set -x
 
 DEBIAN_FRONTEND=noninteractive
 apt-get update
+
+apt-get install -y squid-deb-proxy-client
+
 apt-get upgrade -y
-
-
 
 
 mkdir -p /etc/network
@@ -32,7 +33,7 @@ echo 'pi4' > /etc/hostname
 
 echo \
 '127.0.0.1 localhost
-127.0.1.1 Pi-Example
+127.0.1.1 pi4
 
 ::1     ip6-localhost ip6-loopback
 fe00::0 ip6-localnet
