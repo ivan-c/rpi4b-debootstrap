@@ -13,8 +13,9 @@ fi
 loopback_device=$(losetup -l  | grep rpi4 | awk '{print $1}')
 parted -s --align optimal "$loopback_device" -- \
     mklabel msdos \
-    mkpart primary fat32 1 128MiB \
-    mkpart primary ext4 128MiB 100% set 1 boot
+    mkpart primary boot fat32 1 128MiB \
+    mkpart primary rootfs ext4 128MiB 100% \
+    set 1 boot
 
 mkfs.vfat -F 32 /dev/loop0p1
 mkfs.ext4 /dev/loop0p2
