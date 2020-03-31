@@ -73,7 +73,8 @@ wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac4345
 
 useradd -s /bin/bash -d /home/debian -G sudo debian
 
-echo -e "linuxpassword\nlinuxpassword" | passwd
+yes linuxpassword | passwd
+yes linuxpassword | passwd debian
 mkdir /root/.ssh
 wget https://github.com/ivan-c.keys -O /root/.ssh/authorized_keys
 
