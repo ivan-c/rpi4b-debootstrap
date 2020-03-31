@@ -72,6 +72,11 @@ wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac4345
 
 useradd -s /bin/bash -d /home/debian -G sudo debian
 
+echo -e "linuxpassword\nlinuxpassword" | passwd
+mkdir /root/.ssh
+wget https://github.com/ivan-c.keys -O /root/.ssh/authorized_keys
+
+
 cd /usr/local/bin
 wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update
 chmod +x /usr/bin/rpi-update
