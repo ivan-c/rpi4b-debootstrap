@@ -20,8 +20,10 @@ mkfs.vfat -F 32 /dev/loop0p1
 mkfs.ext4 /dev/loop0p2
 
 mount /dev/loop0p2 /mnt/sd
-mkdir /mnt/sd/boot
-mount /dev/loop0p1 /mnt/sd/boot
+mkdir /mnt/sd_boot
+mount /dev/loop0p1 /mnt/sd_boot
+mount --bind /mnt/sd_boot /mnt/sd/boot
+
 
 # debootstrap --arch arm64 buster /mnt/sd
 qemu-debootstrap --arch=arm64 --keyring /usr/share/keyrings/debian-archive-keyring.gpg --variant=buildd --exclude=debfoster buster /mnt/sd http://ftp.debian.org/debian
