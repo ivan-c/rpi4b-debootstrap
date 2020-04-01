@@ -4,9 +4,6 @@ set -x
 
 DEBIAN_FRONTEND=noninteractive
 apt-get update
-
-apt-get install -y squid-deb-proxy-client
-
 apt-get upgrade -y
 
 
