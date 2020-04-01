@@ -67,17 +67,12 @@ apt-get install -y -o Dpkg::Options::=--force-confnew \
     wpasupplicant \
     xz-utils
 
-cd /lib/firmware/brcm
-wget https://raw.githubusercontent.com/RPi-Distro/firmware-nonfree/master/brcm/brcmfmac43455-sdio.txt
-wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
-
 useradd -s /bin/bash -d /home/debian -G sudo debian
 
 yes linuxpassword | passwd
 yes linuxpassword | passwd debian
 mkdir /root/.ssh
 wget https://github.com/ivan-c.keys -O /root/.ssh/authorized_keys
-
 
 cd /usr/local/bin
 wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update
