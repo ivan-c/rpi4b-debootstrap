@@ -84,3 +84,7 @@ wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update -O /u
 chmod +x /usr/bin/rpi-update
 
 apt install -y curl binutils kmod
+apt install -y isc-dhcp-client iputils-ping
+
+# remove file identifying as chroot
+rm /etc/debian_chroot
