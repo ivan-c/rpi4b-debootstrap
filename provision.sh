@@ -6,6 +6,12 @@ DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get upgrade -y
 
+apt-get install -y apt-utils locales
+
+# set locale without interaction (ie dpkg-reconfigure locales)
+sed -i '/^#.* en_US\.UTF-8.* /s/^#//' /etc/locale.gen
+locale-gen
+
 
 mkdir -p /etc/network
 
