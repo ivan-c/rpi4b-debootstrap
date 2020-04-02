@@ -84,6 +84,3 @@ chmod +x /usr/bin/rpi-update
 apt install -y curl binutils kmod
 # important packages
 apt install -y isc-dhcp-client iputils-ping nano less
-
-# remove file identifying as chroot
-rm /etc/debian_chroot

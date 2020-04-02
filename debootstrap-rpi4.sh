@@ -68,3 +68,6 @@ schroot --chroot debootstrap-rpi4 -u root -- sh -c "${proxy_vars} provision.sh"
 
 cp provision-boot.sh /mnt/sd/usr/bin/
 chroot /mnt/sd/ /usr/bin/provision-boot.sh
+
+# remove file identifying as chroot
+rm /etc/debian_chroot
