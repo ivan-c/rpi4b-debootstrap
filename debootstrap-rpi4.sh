@@ -1,4 +1,5 @@
 #! /bin/sh -e
+set -x
 
 if [ ! -f rpi4.img ]; then
     fallocate --length 3GiB rpi4.img
