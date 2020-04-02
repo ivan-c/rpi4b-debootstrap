@@ -70,4 +70,4 @@ cp provision-boot.sh /mnt/sd/usr/bin/
 chroot /mnt/sd/ /usr/bin/provision-boot.sh
 
 # remove file identifying as chroot
-rm /etc/debian_chroot
+rm /mnt/sd/etc/debian_chroot
