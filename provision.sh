@@ -20,6 +20,7 @@ echo \
 iface lo inet loopback
 
 auto eth0
+allow-hotplug eth0
 iface eth0 inet dhcp
 
 allow-hotplug wlan0
