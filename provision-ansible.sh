@@ -7,9 +7,8 @@ wget \
 chmod +x /tmp/bootstrap-ansible.sh
 /tmp/bootstrap-ansible.sh
 
-
-wget \
-    https://raw.githubusercontent.com/ivan-c/ansible-role-ansible-pull/master/files/ansible_pull_wrapper.sh \
-    --output-document /usr/bin/ansible_pull_wrapper.sh
-chmod +x /usr/bin/ansible_pull_wrapper.sh
-/usr/bin/ansible_pull_wrapper.sh --tags boot --url https://github.com/ivan-c/ansible-bootstrap/
+# wget \
+#     https://raw.githubusercontent.com/ivan-c/ansible-role-ansible-pull/master/files/ansible_pull_wrapper.sh \
+#     --output-document /usr/bin/ansible_pull_wrapper.sh
+# chmod +x /usr/bin/ansible_pull_wrapper.sh
+# /usr/bin/ansible_pull_wrapper.sh --tags boot --url https://github.com/ivan-c/ansible-bootstrap/
