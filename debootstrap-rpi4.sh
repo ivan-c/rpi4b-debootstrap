@@ -22,12 +22,9 @@ mkfs.ext4 /dev/loop0p2
 
 test -d /mnt/sd || mkdir -p /mnt/sd
 mount /dev/loop0p2 /mnt/sd
+
 test -d /mnt/sd/boot || mkdir /mnt/sd/boot
-
-test -d /mnt/sd_boot || mkdir -p /mnt/sd_boot
-mount /dev/loop0p1 /mnt/sd_boot
-
-mount --bind /mnt/sd_boot /mnt/sd/boot
+mount /dev/loop0p1 /mnt/sd/boot
 
 
 # debootstrap --arch arm64 buster /mnt/sd
