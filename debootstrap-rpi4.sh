@@ -65,7 +65,7 @@ fi
 
 # reuse given http proxy
 schroot --chroot debootstrap-rpi4 -u root -- sh -c "${proxy_vars} provision.sh"
-schroot --chroot debootstrap-rpi4 -u root -- sh -c "${proxy_vars} provision-ansible"
+schroot --chroot debootstrap-rpi4 -u root -- sh -c "${proxy_vars} provision-ansible.sh"
 
 
 cp provision-boot.sh /mnt/sd/usr/bin/
