@@ -33,11 +33,8 @@ echo \
 nameserver 1.0.0.1' \
 > /etc/resolv.conf
 
-echo rpi4 > /etc/hostname
-
 echo \
 '127.0.0.1 localhost
-127.0.1.1 rpi4
 
 ::1     ip6-localhost ip6-loopback
 fe00::0 ip6-localnet
