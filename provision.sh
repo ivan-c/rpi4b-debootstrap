@@ -44,6 +44,7 @@ ff02::3 ip6-allhosts' \
 > /etc/hosts
 
 
+# todo: fixup for NFS mounts
 cat << EOF > /etc/fstab
 # <file system>   <dir>           <type>  <options>         <dump>  <pass>
 proc              /proc           proc    defaults          0       0
